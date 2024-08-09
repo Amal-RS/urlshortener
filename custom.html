@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h2>URL Shortener (custom) </h2>
+    <form action="/shorten-custom/" method="post" id="custom">
+        <label for="original_url">Original URL:</label>
+        <input type="text" id="original_url_custom" name="original_url"><br><br>
+        <label for="original_url">CUSTOM:</label>
+        <input type="text" id="original_url_custom_name" name="original_url">
+        <input type="submit" value="Shorten URL">
+    </form>
+
+    <p id="short_url_custom"></p>
+    <br><br>
+    <a href="index.html">Normal URL Shortner</a>
+    <script>
+        const form = document.getElementById('custom');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const originalUrl = document.getElementById("original_url_custom").value;
+            const custom = document.getElementById("original_url_custom_name").value;
+            const response = await fetch('http://127.0.0.1:8000/shorten-custom/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ original_url: originalUrl ,custom_name:custom})
+            });
+            const shortUrl = await response.json();
+            document.getElementById("short_url_custom").textContent = `Short URL: ${shortUrl.short_url}`;
+        });
+        
+        
+    </script>
+</body>
+</html>

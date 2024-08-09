@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>URL Shortener</h2>
+    <form action="/shorten/" method="post">
+        <label for="original_url">Original URL:</label>
+        <input type="text" id="original_url" name="original_url"><br><br>
+        <input type="submit" value="Shorten URL">
+    </form>
+    <p id="short_url"></p>
+    
+    <br><br>
+    <a href="custom.html">Custom URL Shortner</a>
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const originalUrl = document.querySelector('#original_url').value;
+            const response = await fetch('http://127.0.0.1:8000/shorten/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ original_url: originalUrl })
+            });
+            const shortUrl = await response.json();
+            document.querySelector('#short_url').textContent = `Short URL: ${shortUrl.short_url}`;
+        });
+    </script>
+</body>
+</html>

@@ -94,3 +94,7 @@ Out put
 ![image](https://github.com/user-attachments/assets/a306be6e-b07c-45cf-9981-11a6a3620dba)
 
 
+![image](https://github.com/user-attachments/assets/ce9e78e4-c316-4cb4-8599-a8b09d57801b)
+
+
+

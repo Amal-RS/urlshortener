@@ -84,3 +84,13 @@ The code is organized into the following files:
     
 
 Note: This documentation is a summary of the code and may not include all the details.
+
+Out put
+------------
+
+![image](https://github.com/user-attachments/assets/38bb697d-8655-40b5-9e88-d2aca4db53ef)
+
+
+![image](https://github.com/user-attachments/assets/a306be6e-b07c-45cf-9981-11a6a3620dba)
+
+
